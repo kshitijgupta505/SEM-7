@@ -1,0 +1,198 @@
+/* Ensure the logo fits within the header */
+.logo {
+    height: 40px;
+}
+
+/* Style the navigation links */
+.nav-link {
+    color: #000;
+    margin: 0 10px;
+}
+
+.nav-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Style the "Schedule a Demo" button */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Style the header */
+header {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    header .container {
+        flex-wrap: wrap;
+    }
+    
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown, .btn-success {
+        margin-top: 10px;
+    }
+}
+
+/* Additional styles for the about-section */
+body {
+    background-color: #f5f7fa;
+    font-family: Arial, sans-serif;
+}
+
+.about-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about-section h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-section h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.about-section img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+
+.container {
+    background-color: #58bf67;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 50px auto;
+    max-width: 800px;
+    display: flex;
+    align-items: flex-start;
+}
+.left-section {
+    color: white;
+    font-size: 2.5rem;
+    margin-right: 30px;
+    flex-shrink: 0;
+}
+.right-section {
+    flex-grow: 1;
+}
+.card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.card h2 {
+    color: #2e7d32;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.card p {
+    color: #37474f;
+    font-size: 1rem;
+}
+
+.header {
+    text-align: center;
+    margin-top: 50px;
+}
+.header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+.header p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+.images img {
+    border-radius: 15px;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* part 3 */
+.timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.year {
+    margin-right: 20px;
+    color: #888;
+}
+.month {
+    text-align: center;
+    margin: 0 20px;
+}
+.month h2 {
+    color: #2ecc71;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.event {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.event i {
+    font-size: 24px;
+    color: #8e44ad;
+    margin-right: 10px;
+}
+.event p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.container3 {
+    text-align: center;
+}
+.heading {
+    color: #2c2e83;
+    font-size: 24px;
+    font-weight: bold;
+}

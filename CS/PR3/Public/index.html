@@ -1,0 +1,160 @@
+
+<!-- coras example  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudant CORS Example</title>
+</head>
+
+<body>
+    <h1>Cloudant CORS Example</h1>
+    <button id="fetchDatabases">Fetch Databases</button>
+    <pre id="result"></pre>
+
+    <script>
+        document.getElementById('fetchDatabases').addEventListener('click', function () {
+            const url = 'https://18fa3ce6-4efa-48ad-99c1-82cca7231b1c-bluemix.cloudantnosqldb.appdomain.cloud/_all_dbs';
+            const username = 'apikey-v2-o4ryqhfydiqs8rgl1499dwa1js81hqr5lo5mak88j4o';
+            const password = '06b8becebf44095e2459b15c174185a9';
+
+            const headers = new Headers();
+            headers.append('Authorization', 'Basic ' + btoa(username + ':' + password));
+
+            fetch(url, { method: 'GET', headers: headers })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('result').textContent = 'Fetch error: ' + error.message;
+                });
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+
+<!-- Cloudant API Example -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudant API Example</title>
+</head>
+
+<body>
+    <h1>Cloudant API Example</h1>
+    <button id="fetchData">Fetch Databases</button>
+    <pre id="result"></pre>
+
+    <script>
+        document.getElementById('fetchData').addEventListener('click', function () {
+            const apiKey = 'apikey-f34f17ee314f4139bb89c22ebf835e0a';
+            const apiPassword = 'f16e863dd5aeb98d85ee5f3ed7fa1f695dfc3490';
+
+            const url = 'https://18fa3ce6-4efa-48ad-99c1-82cca7231b1c-bluemix.cloudantnosqldb.appdomain.cloud/mydatabase/_all_docs?include_docs=true';
+            
+            const headers = new Headers();
+            headers.append('Authorization', 'Basic ' + btoa(apiKey + ':' + apiPassword));
+
+            fetch(url, { method: 'GET', headers: headers })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('result').textContent = 'Fetch error: ' + error.message;
+                });
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- replication -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudant API Example replication</title>
+</head>
+
+<body>
+    <h1>Cloudant API Example</h1>
+    <button id="replicateData">Replicate Data</button>
+    <pre id="result"></pre>
+
+    <script>
+        document.getElementById('replicateData').addEventListener('click', function () {
+            const apiKey = 'apikey-f34f17ee314f4139bb89c22ebf835e0a';
+            const apiPassword = 'f16e863dd5aeb98d85ee5f3ed7fa1f695dfc3490';
+            const sourceUrl = 'https://18fa3ce6-4efa-48ad-99c1-82cca7231b1c-bluemix.cloudantnosqldb.appdomain.cloud/mydatabase/_all_docs?include_docs=true';
+            const targetUrl = 'https://18fa3ce6-4efa-48ad-99c1-82cca7231b1c-bluemix.cloudantnosqldb.appdomain.cloud/backup';
+            const headers = new Headers();
+            headers.append('Authorization', 'Basic ' + btoa(apiKey + ':' + apiPassword));
+            headers.append('Content-Type', 'application/json');
+
+            fetch(sourceUrl, { method: 'GET', headers: headers })
+                .then(response => response.json())
+                .then(data => {
+                    const docs = data.rows.map(row => row.doc);
+                    docs.forEach(doc => {
+                        replicateDocument(doc, targetUrl, headers);
+                    });
+                })
+                .catch(error => {
+                    document.getElementById('result').textContent = 'Replication error: ' + error;
+                });
+        });
+
+        function replicateDocument(doc, targetUrl, headers) {
+            const docUrl = `${targetUrl}/${doc._id}`;
+            fetch(docUrl, { method: 'GET', headers: headers })
+                .then(response => {
+                    if (response.status === 404) {
+                        // Document does not exist, create it
+                        return fetch(targetUrl, {
+                            method: 'POST',
+                            headers: headers,
+                            body: JSON.stringify(doc)
+                        });
+                    } else {
+                        return response.json().then(existingDoc => {
+                            // Document exists, update it
+                            doc._rev = existingDoc._rev;
+                            return fetch(docUrl, {
+                                method: 'PUT',
+                                headers: headers,
+                                body: JSON.stringify(doc)
+                            });
+                        });
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        document.getElementById('result').textContent += `\nReplication success: ${doc._id}`;
+                    } else {
+                        document.getElementById('result').textContent += `\nReplication error: ${JSON.stringify(data)}`;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('result').textContent += `\nReplication error: ${error.message}`;
+                });
+        }
+    </script>
+</body>
+
+</html> -->

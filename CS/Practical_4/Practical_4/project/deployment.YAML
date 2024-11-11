@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kshitij2-deploy
+spec:
+  selector:
+    matchLabels:
+      app: mynew-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mynew-app
+    spec:
+      containers:
+      - name: mynew-app
+        image: au.icr.io/kshitijname/internal-exam-img
+        ports:
+        - containerPort: 3000
+
+

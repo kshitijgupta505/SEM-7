@@ -1,0 +1,81 @@
+/* Ensure the logo fits within the header */
+.logo {
+    height: 40px;
+}
+
+/* Style the navigation links */
+.nav-link {
+    color: #000;
+    margin: 0 10px;
+}
+
+.nav-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Style the "Schedule a Demo" button */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Style the header */
+header {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    header .container {
+        flex-wrap: wrap;
+    }
+    
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown, .btn-success {
+        margin-top: 10px;
+    }
+}
+
+/* Additional styles for the about-section */
+body {
+    background-color: #f5f7fa;
+    font-family: Arial, sans-serif;
+}
+
+.about-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about-section h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-section h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.about-section img {
+    max-width: 100%;
+    border-radius: 10px;
+}

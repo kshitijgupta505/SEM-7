@@ -1,0 +1,2 @@
+{"name":"@cloudant/couchbackup","version":"2.10.2","mode":"full"}
+[{"_id":"0009368cb10a7ec3980b62b4efea8d02","_rev":"1-527cdae95b18510b8a303994f0c7769d","_revisions":{"ids":["527cdae95b18510b8a303994f0c7769d"],"start":1},"name":"Kshitij Gupta"}]
